@@ -5,18 +5,34 @@
 	align-items: center;
 	background: var(--white);
 	border-radius: 20px;
-	padding: 20px;
+	margin: 1rem;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	width: 100%;
-	max-height: 100%;
+	width: auto;
+	height: 45rem;
 	border: 3px solid var(--orange);
 	overflow: hidden;
 }
+.week-scheduler {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background: var(--white);
+	border-radius: 20px;
+	padding: 20px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	width: auto;
+	height: auto;
+	border: 3px solid var(--orange);
+	overflow: hidden;
+}
+
 .week-scheduler h2 {
-	font-size: 1.5rem;
+	font-size: 2rem;
 	margin-bottom: 10px;
 	color: var(--dark-blue);
 }
+
 .scheduler-header {
 	display: flex;
 	justify-content: space-between;
@@ -47,7 +63,7 @@
 	align-items: center;
 	grid-template-columns: repeat(7, 1fr);
 	gap: 10px;
-	max-width: 100%;
+	max-width: auto;
 	height: 100vh;
 }
 
@@ -69,9 +85,8 @@
 }
 
 .slot-button {
-	background: var(--light-blue);
-	color: white;
-	border: 1px solid var(--dark-blue);
+	background: var(--white);
+	border: 1px solid var(--darkblue);
 	padding: 5px 10px;
 	border-radius: 5px;
 	width: 100%;

@@ -71,18 +71,15 @@ const AdvertDetails = () => {
 		if (!selectedSlot || !user?.token || !advert) return;
 
 		const reservationData = {
-			advert_id: Number(id),
-			user_id: user.id,
 			goat_id: advert.goat_id,
-			start_at: `${selectedSlot.date} ${selectedSlot.hour}`,
 			comment: message,
 		};
 
 		try {
 			const response = await fetch(
-				`${import.meta.env.VITE_API_URL}/api/slots`,
+				`${import.meta.env.VITE_API_URL}/api/slots/${selectedSlot.id}`,
 				{
-					method: "POST",
+					method: "PATCH",
 					headers: {
 						"Content-Type": "application/json",
 						Authorization: `Bearer ${user.token}`,

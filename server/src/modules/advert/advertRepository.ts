@@ -24,13 +24,7 @@ class AdvertRepository {
 	async createSlot(slot: Slot): Promise<number> {
 		const [result] = await databaseClient.query<Result>(
 			"INSERT INTO slot (start_at, duration, meet_link, comment, advert_id) VALUES (?, ?, ?, ?, ?)",
-			[
-				slot.start_at,
-				slot.duration,
-				slot.meet_link,
-				slot.comment,
-				slot.advert_id,
-			],
+			[slot.start_at, slot.comment, slot.advert_id],
 		);
 		return result.insertId;
 	}

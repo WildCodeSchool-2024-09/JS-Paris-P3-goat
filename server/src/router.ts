@@ -6,6 +6,7 @@ import authServices from "./modules/auth/authServices";
 import goatActions from "./modules/goat/goatActions";
 import mainTagActions from "./modules/mainTag/mainTagActions";
 import confirmReservation from "./modules/reservation/reservationActions";
+import slotActions from "./modules/slot/slotActions";
 import fileUpload from "./services/fileUpload";
 
 const router = express.Router();
@@ -38,7 +39,7 @@ router.get("/search/maintags", advertActions.searchMainTagsByName);
 router.get("/search/subtags", advertActions.searchSubTagsByName);
 
 router.get("/filter/advert", advertActions.filterAdverts);
-router.post("/api/slots/", advertActions.addSlot);
+router.patch("/api/slots/:slotId", slotActions.book);
 // Apply auth middleswares for all followings routes
 router.use(authServices.isAuth);
 

@@ -18,6 +18,14 @@ class slotRepository {
 		);
 		return slots;
 	}
+
+	async update(slot: Slot) {
+		const [result] = await databaseClient.query<Result>(
+			"UPDATE slot SET ? WHERE id= ?",
+			[slot, slot.id],
+		);
+		return result;
+	}
 }
 
 export default new slotRepository();

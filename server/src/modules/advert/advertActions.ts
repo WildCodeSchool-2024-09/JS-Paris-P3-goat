@@ -147,8 +147,6 @@ const addSlot: RequestHandler = async (req: Request, res: Response, next) => {
 		const newSlot = {
 			goat_id: req.body.goat_id,
 			start_at: req.body.start_at,
-			duration: req.body.duration,
-			meet_link: req.body.meet_link,
 			comment: req.body.comment,
 			advert_id: req.body.advert_id,
 		};
